@@ -1,0 +1,21 @@
+name: main
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Клонируем репозиторий
+      - uses: actions/checkout@v3
+      # Устанавливаем Node.js
+      - uses: actions/setup-node@v3
+
+      # Сетап
+      - run: make setup
+      # Линтер
+      - run: make lint
+      # Тесты
+      - run: make test
+      # Запуск
+      - run: make start
