@@ -17,5 +17,3 @@ jobs:
       - run: make lint
       # Тесты
       - run: make test
-      # Запуск
-      - run: make start
